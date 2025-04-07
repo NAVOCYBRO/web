@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Cybersecurity Enthusiast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+        <p>Cybersecurity Researcher | CTF Player | Penetration Tester</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a href="/writeups.html" class="btn">CTF Writeups →</a>
+    </nav>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <div class="about-content">
+            <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
+            <div>
+                <p>I’m a cybersecurity enthusiast with experience in:</p>
+                <ul>
+                    <li>🔐 Cryptography & RSA Challenges</li>
+                    <li>🛡️ Web Application Penetration Testing</li>
+                    <li>📡 Network Security</li>
+                </ul>
+                <p>When I’m not hacking, I enjoy contributing to open-source projects and writing technical blogs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2><i class="fas fa-code"></i> Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Easy RSA Solver</h3>
+                <p>Python tool to break weak RSA implementations using Fermat factorization.</p>
+                <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>CTF Challenge Generator</h3>
+                <p>Automates the creation of Capture The Flag challenges for beginners.</p>
+                <a href="#" class="btn-small">Demo <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates">
+        <h2><i class="fas fa-certificate"></i> Certificates</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <img src="images/oscp.png" alt="OSCP">
+                <h3>OSCP</h3>
+                <p>Offensive Security Certified Professional</p>
+            </div>
+            <div class="cert-card">
+                <img src="images/ejpt.png" alt="eJPT">
+                <h3>eJPT</h3>
+                <p>eLearnSecurity Junior Penetration Tester</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div class="social-links">
+            <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
