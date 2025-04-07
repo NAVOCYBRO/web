@@ -90,32 +90,46 @@ h2 {
     border-radius: 5px;
 }
 
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
+/* Contact Section - Social Media Cards */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-input, textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.social-links {
+.social-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
     text-align: center;
-    margin-top: 1rem;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.social-links a {
-    color: #6e48aa;
-    font-size: 2rem;
-    margin: 0 0.5rem;
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.social-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #6e48aa; /* Purple accent */
+}
+
+.social-card span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.social-card small {
+    color: #666;
+    font-size: 0.9rem;
+}
 /* Footer */
 footer {
     text-align: center;
