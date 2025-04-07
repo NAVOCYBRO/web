@@ -71,24 +71,7 @@ h2 {
     border: 5px solid #6e48aa;
 }
 
-/* Projects & Certificates Grid */
-.project-grid, .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
 
-.project-card, .cert-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cert-card img {
-    width: 100%;
-    border-radius: 5px;
-}
 
 /* Contact Section - Social Media Cards */
 .social-grid {
