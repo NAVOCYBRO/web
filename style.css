@@ -1,109 +1,125 @@
+/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
     color: #333;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-}
-
-.container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f9;
 }
 
 header {
+    background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+    color: white;
     text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    padding: 2rem 0;
 }
 
-h1 {
-    color: #2c3e50;
-    margin-bottom: 5px;
+.highlight {
+    color: #ffd700;
 }
 
-.subtitle {
-    color: #7f8c8d;
-    font-style: italic;
+nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn {
+    background: #ff5722;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #e64a19;
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
-    color: #2980b9;
-    margin-top: 30px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #6e48aa;
+    padding-bottom: 0.5rem;
+    color: #6e48aa;
 }
 
-h3 {
-    color: #16a085;
-    margin-top: 20px;
+/* About Me */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
-pre {
-    background-color: #282c34;
-    padding: 15px;
+.profile-img {
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid #6e48aa;
+}
+
+/* Projects & Certificates Grid */
+.project-grid, .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card, .cert-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cert-card img {
+    width: 100%;
     border-radius: 5px;
-    overflow-x: auto;
 }
 
-code {
-    font-family: 'Fira Code', monospace;
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-blockquote {
-    border-left: 4px solid #3498db;
-    padding-left: 15px;
-    margin-left: 0;
-    color: #555;
-    font-style: italic;
-}
-
-.flag {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-}
-
-.flag-box {
-    font-family: monospace;
-    background-color: #2c3e50;
-    color: #f1c40f;
-    padding: 10px 15px;
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    display: inline-block;
-    margin-top: 10px;
 }
 
-footer {
-    margin-top: 40px;
+.social-links {
     text-align: center;
-    font-size: 0.9em;
-    color: #7f8c8d;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    margin-top: 1rem;
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
+.social-links a {
+    color: #6e48aa;
+    font-size: 2rem;
+    margin: 0 0.5rem;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        padding: 15px;
-    }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
 }
