@@ -3,22 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navoybro | Cybersecurity Enthusiast</title>
+    <title>NAVOCYBRO | CYBER SECURITY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --neon-purple: #9400d3;
+            --dark-bg: #0a0a0a;
+            --terminal-text: #00ff41;
+        }
+        
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--dark-bg);
+            color: var(--terminal-text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Matrix Rain Background */
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            border-bottom: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+            margin-bottom: 2rem;
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .highlight {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            animation: flicker 1.5s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px var(--neon-green);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid var(--neon-purple);
+        }
+        
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem;
+        }
+        
+        nav a:hover {
+            color: var(--neon-green);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--neon-green);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .btn {
+            background: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: var(--neon-green);
+            color: black;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 1px solid var(--neon-purple);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        section::before {
+            content: '>';
+            position: absolute;
+            left: 0.5rem;
+            top: 1.5rem;
+            color: var(--neon-green);
+        }
+        
+        h2 {
+            color: var(--neon-purple);
+            border-bottom: 1px solid var(--neon-purple);
+            padding-bottom: 0.5rem;
+            text-shadow: 0 0 5px var(--neon-purple);
+            display: inline-block;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .project-grid, .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-card, .social-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border: 1px solid var(--neon-purple);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card:hover, .social-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-purple);
+        }
+        
+        .project-card::before, .social-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent,
+                transparent,
+                transparent,
+                var(--neon-purple),
+                transparent
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            transition: all 0.5s;
+        }
+        
+        .project-card:hover::before, .social-card:hover::before {
+            top: 0;
+            left: 0;
+            transform: rotate(0);
+        }
+        
+        .social-card {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-green);
+        }
+        
+        .social-card span {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .social-card small {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid var(--neon-purple);
+            margin-top: 2rem;
+        }
+        
+        /* Terminal cursor effect */
+        .typing {
+            display: inline-block;
+        }
+        
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            nav a {
+                margin: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix"></canvas>
+    
     <!-- Header -->
     <header>
-        <h1>Hi, I'm <span class="highlight">Navocybro</span></h1>
-        <p>Cybersecurity learner | CTF Player | Student</p>
+        <h1>Hi, I'm <span class="highlight">NAVOCYBRO</span></h1>
+        <p class="typing">>_ Cybersecurity learner | CTF Player | Student</p>
     </header>
 
     <!-- Navigation -->
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
         <a href="#contact">Contact</a>
         <a href="writeups.html" class="btn">CTF Writeups →</a>
     </nav>
@@ -27,15 +274,14 @@
     <section id="about">
         <h2><i class="fas fa-user"></i> About Me</h2>
         <div class="about-content">
-    
             <div>
-                <p>I’m a cybersecurity enthusiast with experience in:</p>
+                <p>>_ I'm a cybersecurity enthusiast with experience in:</p>
                 <ul>
                     <li>🔐 Cryptography & RSA Challenges</li>
                     <li>🛡️ Web Application Penetration Testing</li>
                     <li>📡 Network Security</li>
                 </ul>
-                <p>When I’m not hacking, I enjoy contributing to open-source projects and writing technical blogs.</p>
+                <p>>_ When I'm not hacking, I enjoy contributing to open-source projects and writing technical blogs.</p>
             </div>
         </div>
     </section>
@@ -46,61 +292,100 @@
         <div class="project-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <h3>Easy RSA Solver</h3>
+                <h3>> Easy RSA Solver</h3>
                 <p>Python tool to break weak RSA implementations using Fermat factorization.</p>
-                <a href="https://github.com/NAVOCYBRO/CTF-writeups.git" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                <a href="https://github.com/NAVOCYBRO/CTF-writeups.git" class="btn">View Code <i class="fab fa-github"></i></a>
             </div>
             <!-- Project 2 -->
             <div class="project-card">
-                <h3>Network-Scan</h3>
-                <p>Scan Network Easily .</p>
-                <a href="https://github.com/NAVOCYBRO/Network-Scan.git" class="btn-small">Demo <i class="fas fa-external-link-alt"></i></a>
+                <h3>> Network-Scan</h3>
+                <p>Scan Network Easily.</p>
+                <a href="https://github.com/NAVOCYBRO/Network-Scan.git" class="btn">View Code <i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
-  
-
-   <!-- Contact Me -->
-<section id="contact">
-    <h2><i class="fas fa-paper-plane"></i> Want to Collaborate?</h2>
-    <p>Reach out to me on these platforms:</p>
-    
-    <div class="social-grid">
-        <!-- GitHub -->
-        <a href="https://github.com/NAVOCYBRO/" class="social-card">
-            <i class="fab fa-github"></i>
-            <span>GitHub</span>
-            <small>@NAVOCYBRO</small>
-        </a>
+    <!-- Contact -->
+    <section id="contact">
+        <h2><i class="fas fa-paper-plane"></i> Want to Collaborate?</h2>
+        <p>>_ Reach out to me on these platforms:</p>
         
-        <!-- LinkedIn 
-        <a href="https://linkedin.com/in/yourusername" class="social-card">
-            <i class="fab fa-linkedin"></i>
-            <span>LinkedIn</span>
-            <small></small>
-        </a>
-        -->
-        
-        <!-- Twitter/X -->
-        <a href="https://twitter.com/navocybro" class="social-card">
-            <i class="fab fa-twitter"></i>
-            <span>Twitter</span>
-            <small>@navocybro</small>
-        </a>
-        
-        <!-- Email (Optional) -->
-        <a href="mailto:navocybro@protom.me" class="social-card">
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
-            <small>navocybro@proton.me</small>
-        </a>
-    </div>
-</section>
+        <div class="social-grid">
+            <!-- GitHub -->
+            <a href="https://github.com/NAVOCYBRO/" class="social-card">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+                <small>@NAVOCYBRO</small>
+            </a>
+            
+            <!-- Twitter/X -->
+            <a href="https://twitter.com/navocybro" class="social-card">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+                <small>@navocybro</small>
+            </a>
+            
+            <!-- Email -->
+            <a href="mailto:navocybro@protom.me" class="social-card">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+                <small>navocybro@proton.me</small>
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Navocybro. All rights reserved.</p>
+        <p>© 2025 NAVOCYBRO. All rights reserved.</p>
     </footer>
+
+    <!-- Matrix Rain Animation Script -->
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        
+        const alphabet = katakana + latin + nums;
+        
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        
+        const rainDrops = [];
+        
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+        
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        setInterval(draw, 30);
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
